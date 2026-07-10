@@ -1,60 +1,85 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, ExternalLink, FolderGit2, Layers } from 'lucide-react';
+import { Github, FolderGit2, Sparkles, ListChecks } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 export function Projects() {
   const [filter, setFilter] = useState('All');
-  
+
   const categories = ['All', 'Backend', 'Full Stack', 'Automation'];
 
   const projects = [
     {
-      title: "Telecom Backend Development",
-      description: "Highly scalable, fault-tolerant backend infrastructure for telecommunication services using Erlang/OTP. Handles high concurrent connections with minimal latency.",
-      image: "/images/project-telecom.jpg",
-      tags: ["Erlang/OTP", "Distributed Systems", "PostgreSQL", "Backend"],
-      category: "Backend",
-      github: "#",
-      demo: "#"
+      title: "Personal Portfolio Website",
+      description: "Designed and developed a responsive personal portfolio to showcase my professional experience, technical skills, education, certifications, and projects to recruiters and hiring managers.",
+      image: "/images/project-portfolio.jpg",
+      tags: ["React", "Tailwind CSS", "JavaScript"],
+      category: "Full Stack",
+      features: [
+        "Single-page layout with sticky navigation and smooth scrolling",
+        "Fully responsive design across mobile, tablet, and desktop",
+        "Dark/light theme toggle with a modern, recruiter-friendly UI"
+      ],
+      skills: ["React", "Component-based UI design", "Responsive Web Design"],
+      github: "https://github.com/pushpalatha-jammu"
     },
     {
       title: "Django Todo Application",
-      description: "A robust task management REST API and web application built with Django. Features include user authentication, task categorization, priority levels, and due dates.",
+      description: "Developed a task management application with user authentication and full CRUD functionality, allowing users to create, update, delete, and organize daily tasks.",
       image: "/images/project-todo.jpg",
-      tags: ["Python", "Django", "REST API", "Full Stack"],
+      tags: ["Python", "Django", "SQLite/PostgreSQL"],
       category: "Full Stack",
-      github: "#",
-      demo: "#"
+      features: [
+        "User registration and authentication",
+        "Create, update, delete, and organize tasks with due dates",
+        "Server-rendered UI following Django MVT best practices"
+      ],
+      skills: ["Python", "Django", "Relational Database Design"],
+      github: "https://github.com/pushpalatha-jammu"
     },
     {
-      title: "REST API Architecture",
-      description: "Comprehensive enterprise RESTful API built following best practices. Includes JWT authentication, rate limiting, comprehensive error handling, and automated testing.",
-      image: "/images/project-api.jpg",
-      tags: ["Python", "API Design", "Security", "Backend"],
+      title: "Telecom Backend Development",
+      description: "Contributed to backend modules for enterprise telecom applications at Tata Consultancy Services, working on bug fixes, feature enhancements, testing, debugging, and production support using Erlang/OTP within Agile teams.",
+      image: "/images/project-telecom.jpg",
+      tags: ["Erlang/OTP", "Git", "Jira"],
       category: "Backend",
-      github: "#",
-      demo: "#"
+      features: [
+        "Bug fixes and feature enhancements on production telecom systems",
+        "Testing, debugging, and production support",
+        "Collaboration within Agile sprints using Jira and Git"
+      ],
+      skills: ["Erlang/OTP", "Production Support", "Agile Collaboration"],
+      github: null
     },
     {
-      title: "Python Automation Suite",
-      description: "A collection of sophisticated automation scripts for system administration, data processing, and CI/CD pipeline integration, significantly reducing manual overhead.",
+      title: "REST API Development",
+      description: "Built secure REST APIs for backend applications using Django REST Framework, implementing authentication, validation, and structured API responses following industry best practices.",
+      image: "/images/project-api.jpg",
+      tags: ["Python", "Django REST Framework"],
+      category: "Backend",
+      features: [
+        "Authentication and request validation",
+        "Structured, consistent JSON API responses",
+        "Adherence to REST and industry API design conventions"
+      ],
+      skills: ["Python", "Django REST Framework", "API Design"],
+      github: "https://github.com/pushpalatha-jammu"
+    },
+    {
+      title: "Python Automation Scripts",
+      description: "Created automation scripts to simplify repetitive tasks such as file processing, data manipulation, and log analysis, improving efficiency and reducing manual work.",
       image: "/images/project-automation.jpg",
-      tags: ["Python", "Shell Scripting", "Jenkins", "Automation"],
+      tags: ["Python"],
       category: "Automation",
-      github: "#",
-      demo: "#"
-    },
-    {
-      title: "Personal Portfolio Website",
-      description: "Premium, responsive single-page application built with modern web technologies. Features a dark theme, glassmorphism UI, and smooth framer-motion animations.",
-      image: "/images/project-portfolio.jpg",
-      tags: ["React", "Tailwind CSS", "Framer Motion", "Full Stack"],
-      category: "Full Stack",
-      github: "#",
-      demo: "#"
+      features: [
+        "Automated file processing and data manipulation",
+        "Log analysis to speed up troubleshooting",
+        "Reusable scripts that cut down manual, repetitive work"
+      ],
+      skills: ["Python", "Scripting", "Process Automation"],
+      github: "https://github.com/pushpalatha-jammu"
     }
   ];
 
@@ -136,28 +161,56 @@ export function Projects() {
                     <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm mb-6 flex-1">
+                    <p className="text-muted-foreground text-sm mb-4">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mb-6">
+
+                    <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map(tag => (
                         <Badge key={tag} variant="secondary" className="bg-muted/50 text-xs font-normal">
                           {tag}
                         </Badge>
                       ))}
                     </div>
-                    <div className="flex items-center gap-3 pt-4 border-t border-border">
-                      <Button asChild variant="ghost" size="sm" className="hover:bg-primary/10 hover:text-primary gap-2">
-                        <a href={project.github} target="_blank" rel="noopener noreferrer">
-                          <Github className="h-4 w-4" /> Code
-                        </a>
-                      </Button>
-                      <Button asChild variant="ghost" size="sm" className="hover:bg-primary/10 hover:text-primary gap-2">
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-4 w-4" /> Live Demo
-                        </a>
-                      </Button>
+
+                    <div className="mb-4">
+                      <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-foreground/70 mb-2">
+                        <ListChecks className="h-3.5 w-3.5 text-primary" />
+                        Key Features
+                      </div>
+                      <ul className="space-y-1.5">
+                        {project.features.map((feature) => (
+                          <li key={feature} className="text-xs text-muted-foreground flex gap-2">
+                            <span className="text-primary mt-0.5">•</span>
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
+
+                    <div className="mb-2 flex-1">
+                      <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-foreground/70 mb-2">
+                        <Sparkles className="h-3.5 w-3.5 text-primary" />
+                        Skills Demonstrated
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {project.skills.map((skill) => (
+                          <Badge key={skill} variant="outline" className="text-xs font-normal border-primary/30 text-primary/90">
+                            {skill}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+
+                    {project.github && (
+                      <div className="flex items-center gap-3 pt-4 border-t border-border">
+                        <Button asChild variant="ghost" size="sm" className="hover:bg-primary/10 hover:text-primary gap-2">
+                          <a href={project.github} target="_blank" rel="noopener noreferrer">
+                            <Github className="h-4 w-4" /> Code
+                          </a>
+                        </Button>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               </motion.div>
