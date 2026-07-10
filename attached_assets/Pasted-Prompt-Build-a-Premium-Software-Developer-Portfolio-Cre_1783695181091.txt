@@ -1,0 +1,180 @@
+Prompt: Build a Premium Software Developer Portfolio
+
+Create a premium, modern, fully responsive personal portfolio website for Pushpalatha Jammu, designed to impress recruiters, hiring managers, and technical interviewers. The website should have a clean, professional look with smooth animations, fast loading speed, and excellent mobile and desktop responsiveness.
+
+Theme & Design
+
+- Modern dark theme with blue, purple, and white accents.
+- Glassmorphism cards and subtle gradients.
+- Smooth scrolling and elegant animations.
+- Professional typography and spacing.
+- Attractive without being overly flashy.
+- Optimized for accessibility and SEO.
+
+Hero Section
+
+Display:
+
+- Pushpalatha Jammu
+- Software Developer | Assistant Systems Engineer @ TCS
+- Python • Django • Erlang/OTP • AWS • SQL • Git
+- A professional tagline:
+
+«"Building reliable backend applications and continuously learning modern technologies to create scalable software solutions."»
+
+Include:
+
+- Professional profile photo placeholder.
+- "View Projects" button.
+- "Download Resume" button.
+- "Contact Me" button.
+
+About Me
+
+Create a professional summary explaining that I am:
+
+- Assistant Systems Engineer at Tata Consultancy Services (TCS).
+- 2+ years of software development experience.
+- Experienced in backend development and telecommunications.
+- Passionate about Python, Django, cloud technologies, and problem-solving.
+- Currently pursuing an Online MCA while working full-time.
+- Looking for opportunities to contribute, learn, and grow as a software engineer.
+
+Technical Skills
+
+Display skills using attractive cards with icons.
+
+Languages:
+
+- Python
+- Erlang
+- SQL
+- Shell Scripting
+
+Frameworks:
+
+- Django
+- REST APIs
+
+Databases:
+
+- PostgreSQL
+- MySQL
+- MongoDB
+
+Tools:
+
+- Git
+- GitHub
+- Jira
+- Jenkins
+
+Cloud:
+
+- AWS
+
+Concepts:
+
+- Object-Oriented Programming
+- Data Structures
+- REST APIs
+- Distributed Systems
+- Agile Methodology
+- Problem Solving
+
+Professional Experience
+
+Create a timeline.
+
+Assistant Systems Engineer
+Tata Consultancy Services (TCS)
+
+Include responsibilities:
+
+- Backend software development.
+- Bug fixing and feature enhancement.
+- Telecom application development.
+- Working with Erlang/OTP.
+- Testing and debugging.
+- Agile development.
+- Production support.
+- Code reviews.
+- Team collaboration.
+
+Projects
+
+Create attractive project cards with GitHub and Live Demo buttons.
+
+Project placeholders:
+
+1. Personal Portfolio Website
+2. Django Todo Application
+3. Telecom Backend Development
+4. REST API Project
+5. Python Automation Scripts
+
+Each card should include:
+
+- Image placeholder
+- Technologies used
+- Short description
+- GitHub button
+- Live Demo button
+
+Certifications
+
+Create certification cards for:
+
+- AWS Cloud Foundations
+- Cisco Networking Academy
+- Machine Learning Certification
+- Python Certification
+
+Education
+
+Display:
+
+- Online MCA (Currently Pursuing)
+- B.Sc. Computer Science
+
+Achievements
+
+Include:
+
+- 2+ Years Industry Experience
+- Enterprise Software Development
+- Backend Development
+- Continuous Learning
+- Strong Problem Solving Skills
+
+Contact Section
+
+Include:
+
+- Email
+- LinkedIn
+- GitHub
+- Location: India
+
+Create a professional contact form.
+
+Additional Features
+
+- Sticky navigation bar.
+- Scroll progress indicator.
+- Back-to-top button.
+- Smooth page transitions.
+- Animated skill progress bars.
+- Typing animation in hero section.
+- Project filtering.
+- Light/Dark mode toggle.
+- SEO meta tags.
+- Open Graph tags.
+- Favicon.
+- Professional loading animation.
+- Optimized performance.
+- Clean code.
+- React + Tailwind CSS.
+- Fully responsive for mobile, tablet, and desktop.
+
+The final result should look like a premium software engineer portfolio that recruiters immediately recognize as professional, polished, and trustworthy, with clear calls to action and a strong focus on employability.
