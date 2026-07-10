@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, FolderGit2, Sparkles, ListChecks } from 'lucide-react';
+import { Github, FolderGit2, Sparkles, ListChecks, ChevronDown } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 export function Projects() {
   const [filter, setFilter] = useState('All');
+  const [expanded, setExpanded] = useState<string | null>(null);
 
   const categories = ['All', 'Backend', 'Full Stack', 'Automation'];
 
@@ -161,7 +162,7 @@ export function Projects() {
                     <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm mb-4">
+                    <p className="text-muted-foreground text-sm mb-4 flex-1">
                       {project.description}
                     </p>
 
@@ -173,37 +174,59 @@ export function Projects() {
                       ))}
                     </div>
 
-                    <div className="mb-4">
-                      <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-foreground/70 mb-2">
-                        <ListChecks className="h-3.5 w-3.5 text-primary" />
-                        Key Features
-                      </div>
-                      <ul className="space-y-1.5">
-                        {project.features.map((feature) => (
-                          <li key={feature} className="text-xs text-muted-foreground flex gap-2">
-                            <span className="text-primary mt-0.5">•</span>
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setExpanded(expanded === project.title ? null : project.title)}
+                      aria-expanded={expanded === project.title}
+                      className="flex items-center justify-between w-full text-xs font-semibold uppercase tracking-wide text-foreground/70 hover:text-primary transition-colors mb-2"
+                    >
+                      <span>Details</span>
+                      <ChevronDown className={`h-4 w-4 transition-transform ${expanded === project.title ? 'rotate-180' : ''}`} />
+                    </button>
 
-                    <div className="mb-2 flex-1">
-                      <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-foreground/70 mb-2">
-                        <Sparkles className="h-3.5 w-3.5 text-primary" />
-                        Skills Demonstrated
-                      </div>
-                      <div className="flex flex-wrap gap-1.5">
-                        {project.skills.map((skill) => (
-                          <Badge key={skill} variant="outline" className="text-xs font-normal border-primary/30 text-primary/90">
-                            {skill}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
+                    <AnimatePresence initial={false}>
+                      {expanded === project.title && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.25 }}
+                          className="overflow-hidden"
+                        >
+                          <div className="mb-4">
+                            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-foreground/70 mb-2">
+                              <ListChecks className="h-3.5 w-3.5 text-primary" />
+                              Key Features
+                            </div>
+                            <ul className="space-y-1.5">
+                              {project.features.map((feature) => (
+                                <li key={feature} className="text-xs text-muted-foreground flex gap-2">
+                                  <span className="text-primary mt-0.5">•</span>
+                                  <span>{feature}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          <div className="mb-2">
+                            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-foreground/70 mb-2">
+                              <Sparkles className="h-3.5 w-3.5 text-primary" />
+                              Skills Demonstrated
+                            </div>
+                            <div className="flex flex-wrap gap-1.5">
+                              {project.skills.map((skill) => (
+                                <Badge key={skill} variant="outline" className="text-xs font-normal border-primary/30 text-primary/90">
+                                  {skill}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
 
                     {project.github && (
-                      <div className="flex items-center gap-3 pt-4 border-t border-border">
+                      <div className="flex items-center gap-3 pt-4 mt-2 border-t border-border">
                         <Button asChild variant="ghost" size="sm" className="hover:bg-primary/10 hover:text-primary gap-2">
                           <a href={project.github} target="_blank" rel="noopener noreferrer">
                             <Github className="h-4 w-4" /> Code
