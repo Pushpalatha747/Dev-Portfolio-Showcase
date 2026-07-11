@@ -6,14 +6,15 @@ import { Badge } from '@/components/ui/badge';
 
 export function Experience() {
   const responsibilities = [
-    "Backend software development utilizing modern architectures",
-    "Bug fixing, performance optimization, and feature enhancement",
-    "Telecom application development working with Erlang/OTP",
-    "Rigorous testing and debugging in distributed systems",
-    "Active participation in agile development methodologies",
-    "Providing critical production support for live systems",
-    "Conducting code reviews to ensure quality and maintainability",
-    "Cross-functional team collaboration to deliver business value"
+    "Backend development using Erlang",
+    "Telecom software development",
+    "Production support",
+    "Bug fixing",
+    "Feature enhancements",
+    "Unit testing",
+    "Git & Jira for version control and task tracking",
+    "Agile development and sprint ceremonies",
+    "Cross-functional collaboration with Ericsson R&D teams"
   ];
 
   return (
@@ -61,12 +62,13 @@ export function Experience() {
                   <div>
                     <h3 className="text-2xl font-bold text-foreground">Assistant Systems Engineer</h3>
                     <div className="text-lg font-medium text-primary mt-1">Tata Consultancy Services (TCS)</div>
+                    <div className="text-sm text-muted-foreground mt-1">Ericsson R&D, Telecommunications</div>
                   </div>
                   
                   <div className="flex flex-col gap-2 md:items-end text-sm text-muted-foreground">
                     <div className="flex items-center gap-2">
                       <Calendar className="h-4 w-4" />
-                      <span>2021 - Present</span>
+                      <span>November 2023 - Present</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <MapPin className="h-4 w-4" />
@@ -77,7 +79,7 @@ export function Experience() {
 
                 <div className="space-y-4 mb-8">
                   <p className="text-muted-foreground leading-relaxed">
-                    Spearheading backend development initiatives within the telecommunications domain. Responsible for building and maintaining robust distributed systems with a focus on high availability and fault tolerance.
+                    Backend development for telecommunications systems on the Ericsson R&D project, working with Erlang across production support, bug fixing, feature enhancements, and unit testing within Agile teams.
                   </p>
                 </div>
 
@@ -97,7 +99,7 @@ export function Experience() {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-border flex flex-wrap gap-2">
-                  {['Python', 'Django', 'Erlang/OTP', 'Agile', 'Telecom', 'Distributed Systems'].map((tag) => (
+                  {['Erlang', 'Telecom', 'Ericsson R&D', 'Agile', 'Git', 'Jira'].map((tag) => (
                     <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20">
                       {tag}
                     </Badge>

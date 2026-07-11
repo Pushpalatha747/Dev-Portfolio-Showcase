@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Github, Linkedin, Send, MessageSquare } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin, Send, MessageSquare, Phone, Globe, Download, Cloud } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -35,26 +35,38 @@ export function Contact() {
     {
       icon: <Mail className="h-5 w-5" />,
       label: "Email",
-      value: "pushpalatha.jammu@example.com",
-      href: "mailto:pushpalatha.jammu@example.com"
+      value: "jammupushpalatha@gmail.com",
+      href: "mailto:jammupushpalatha@gmail.com"
     },
     {
-      icon: <MapPin className="h-5 w-5" />,
-      label: "Location",
-      value: "India",
-      href: "#"
+      icon: <Phone className="h-5 w-5" />,
+      label: "Phone",
+      value: "+91 93900 40560",
+      href: "tel:+919390040560"
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: "LinkedIn",
-      value: "linkedin.com/in/pushpalatha-jammu",
-      href: "#"
+      value: "linkedin.com/in/pushpalathajammu",
+      href: "https://linkedin.com/in/pushpalathajammu"
     },
     {
       icon: <Github className="h-5 w-5" />,
       label: "GitHub",
-      value: "github.com/pushpalatha-jammu",
-      href: "#"
+      value: "github.com/Pushpalatha747",
+      href: "https://github.com/Pushpalatha747"
+    },
+    {
+      icon: <Globe className="h-5 w-5" />,
+      label: "Portfolio Website",
+      value: "Live Site",
+      href: "/"
+    },
+    {
+      icon: <Download className="h-5 w-5" />,
+      label: "Resume Download",
+      value: "Download PDF",
+      href: "/resume.pdf"
     }
   ];
 
@@ -99,7 +111,7 @@ export function Contact() {
                 <a 
                   key={info.label} 
                   href={info.href}
-                  target={info.href !== "#" && info.href !== "mailto:pushpalatha.jammu@example.com" ? "_blank" : undefined}
+                  target={info.href.startsWith('http') || info.href === '/resume.pdf' ? "_blank" : undefined}
                   rel="noopener noreferrer"
                   className="group block"
                 >
@@ -116,6 +128,18 @@ export function Contact() {
                   </Card>
                 </a>
               ))}
+
+              <Card className="glass-card border-dashed border-white/10 opacity-70">
+                <CardContent className="p-4 flex items-center gap-4">
+                  <div className="p-3 rounded-xl bg-muted/30 text-muted-foreground">
+                    <Cloud className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-medium text-muted-foreground">Google Cloud Skills Boost Profile</h4>
+                    <p className="font-semibold text-foreground/70">Coming Soon</p>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </motion.div>
 

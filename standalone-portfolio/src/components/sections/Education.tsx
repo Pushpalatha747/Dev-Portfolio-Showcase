@@ -14,13 +14,15 @@ export function Education() {
       issuer: "Cisco"
     },
     {
-      title: "Machine Learning Certification",
-      issuer: "Stanford / Coursera"
-    },
-    {
-      title: "Python Certification",
-      issuer: "Python Institute"
+      title: "Machine Learning Fundamentals",
+      issuer: "Certification"
     }
+  ];
+
+  const learningJourney = [
+    "Google Gemini Enterprise",
+    "Generative AI",
+    "Prompt Engineering"
   ];
 
   return (
@@ -43,15 +45,12 @@ export function Education() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <Card className="glass-card border-white/5 relative overflow-hidden group">
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary group-hover:w-2 transition-all" />
+                <Card className="glass-card border-white/5 relative overflow-hidden group opacity-80 hover:opacity-100 transition-opacity">
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-muted group-hover:w-2 transition-all" />
                   <CardContent className="p-6 pl-8">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="text-xl font-bold">Master of Computer Applications (MCA)</h3>
-                      <span className="text-xs font-mono bg-primary/20 text-primary px-2 py-1 rounded-md">Pursuing</span>
-                    </div>
-                    <p className="text-muted-foreground flex items-center gap-2 mt-2">
-                      <BookOpen className="h-4 w-4" /> Online Program
+                    <h3 className="text-xl font-bold mb-2">Bachelor of Science</h3>
+                    <p className="text-muted-foreground flex items-center gap-2">
+                      <BookOpen className="h-4 w-4" /> Computer Science
                     </p>
                   </CardContent>
                 </Card>
@@ -63,12 +62,15 @@ export function Education() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
               >
-                <Card className="glass-card border-white/5 relative overflow-hidden group opacity-80 hover:opacity-100 transition-opacity">
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-muted group-hover:w-2 transition-all" />
+                <Card className="glass-card border-white/5 relative overflow-hidden group">
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary group-hover:w-2 transition-all" />
                   <CardContent className="p-6 pl-8">
-                    <h3 className="text-xl font-bold mb-2">Bachelor of Science</h3>
-                    <p className="text-muted-foreground flex items-center gap-2">
-                      <BookOpen className="h-4 w-4" /> Computer Science
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-xl font-bold">Master of Computer Applications (Online)</h3>
+                      <span className="text-xs font-mono bg-primary/20 text-primary px-2 py-1 rounded-md">Currently Pursuing</span>
+                    </div>
+                    <p className="text-muted-foreground flex items-center gap-2 mt-2">
+                      <BookOpen className="h-4 w-4" /> Online Program
                     </p>
                   </CardContent>
                 </Card>
@@ -105,6 +107,23 @@ export function Education() {
                   </Card>
                 </motion.div>
               ))}
+            </div>
+
+            <div className="mt-8">
+              <h3 className="text-lg font-semibold text-foreground mb-4">Learning Journey</h3>
+              <div className="flex flex-wrap gap-2">
+                {learningJourney.map((item) => (
+                  <span
+                    key={item}
+                    className="text-sm font-medium px-3 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <p className="text-xs text-muted-foreground mt-3 italic">
+                Space reserved for future Google Cloud certifications.
+              </p>
             </div>
           </div>
 

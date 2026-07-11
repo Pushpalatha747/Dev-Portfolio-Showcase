@@ -32,6 +32,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Experience', href: '#experience' },
+    { name: 'Highlights', href: '#highlights' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];

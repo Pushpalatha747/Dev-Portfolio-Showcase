@@ -2,51 +2,54 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Terminal, Database, Cloud, Wrench, Layers, Code2 } from 'lucide-react';
+import { Terminal, Database, Cloud, Wrench, Layers, Code2, Sparkles } from 'lucide-react';
 
 export function Skills() {
   const skillCategories = [
     {
-      title: 'Languages',
+      title: 'Programming',
       icon: <Code2 className="h-5 w-5 text-blue-400" />,
       skills: [
-        { name: 'Python', level: 90 },
-        { name: 'Erlang', level: 80 },
-        { name: 'SQL', level: 85 },
-        { name: 'Shell Scripting', level: 75 }
+        { name: 'Erlang', level: 85 },
+        { name: 'Python', level: 85 },
+        { name: 'JavaScript', level: 75 }
       ]
     },
     {
-      title: 'Frameworks',
+      title: 'Web',
       icon: <Layers className="h-5 w-5 text-purple-400" />,
       skills: [
-        { name: 'Django', level: 85 },
-        { name: 'REST APIs', level: 90 }
+        { name: 'HTML', level: 90 },
+        { name: 'CSS', level: 85 },
+        { name: 'React', level: 80 },
+        { name: 'Django', level: 80 }
       ]
     },
     {
-      title: 'Databases',
+      title: 'Database',
       icon: <Database className="h-5 w-5 text-green-400" />,
       skills: [
-        { name: 'PostgreSQL', level: 85 },
-        { name: 'MySQL', level: 80 },
-        { name: 'MongoDB', level: 70 }
+        { name: 'SQL', level: 85 }
       ]
     },
     {
-      title: 'Tools & CI/CD',
+      title: 'Tools',
       icon: <Wrench className="h-5 w-5 text-orange-400" />,
       skills: [
-        { name: 'Git & GitHub', level: 90 },
+        { name: 'Git', level: 90 },
         { name: 'Jira', level: 85 },
-        { name: 'Jenkins', level: 75 }
+        { name: 'Linux', level: 80 }
       ]
     },
     {
-      title: 'Cloud',
+      title: 'Cloud & AI',
       icon: <Cloud className="h-5 w-5 text-sky-400" />,
-      skills: [
-        { name: 'AWS', level: 80 }
+      items: [
+        'AWS Cloud Foundations',
+        'Amazon Q AI',
+        'Google Gemini Enterprise (Learning)',
+        'Generative AI',
+        'Prompt Engineering'
       ]
     },
     {
@@ -72,7 +75,7 @@ export function Skills() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted/50 border border-border text-sm font-medium mb-4"
           >
-            <Code2 className="h-4 w-4 text-primary" />
+            <Sparkles className="h-4 w-4 text-primary" />
             <span>Technical Arsenal</span>
           </motion.div>
           <motion.h2 

@@ -5,19 +5,19 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 const titles = [
-  'Software Developer',
-  'Backend Engineer',
-  'Systems Engineer @ TCS'
+  'Assistant Systems Engineer',
+  'Backend Software Engineer',
+  'AI & Cloud Enthusiast'
 ];
 
 export function Hero() {
-  const skills = ['Python', 'Django', 'Erlang/OTP', 'AWS', 'SQL', 'Git'];
+  const skills = ['Erlang', 'Python', 'AWS', 'Generative AI', 'Prompt Engineering', 'Amazon Q AI'];
   const [titleIndex, setTitleIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setTitleIndex((prev) => (prev + 1) % titles.length);
-    }, 3000);
+    }, 2600);
     return () => clearInterval(interval);
   }, []);
 
@@ -47,8 +47,7 @@ export function Hero() {
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
                 Hi, I'm <span className="text-gradient">Pushpalatha Jammu</span>
               </h1>
-              <div className="text-xl md:text-2xl font-semibold text-muted-foreground h-[40px] flex items-center overflow-hidden">
-                <span className="mr-2">I am a</span>
+              <div className="text-lg md:text-2xl font-semibold text-muted-foreground h-[40px] flex items-center overflow-hidden">
                 <div className="relative flex-1 h-full">
                   <AnimatePresence mode="wait">
                     <motion.span
@@ -64,10 +63,26 @@ export function Hero() {
                   </AnimatePresence>
                 </div>
               </div>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="text-sm md:text-base font-mono text-primary/80 tracking-wide"
+              >
+                Assistant Systems Engineer | Backend Software Engineer | AI &amp; Cloud Enthusiast
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="text-xs md:text-sm font-mono text-muted-foreground/80 tracking-wide"
+              >
+                Backend Developer | Erlang | Python | Telecommunications | Continuous Learner
+              </motion.p>
             </div>
 
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-lg">
-              Building reliable backend applications and continuously learning modern technologies to create scalable software solutions.
+              I am an Assistant Systems Engineer at Tata Consultancy Services (TCS) working on the Ericsson R&D project. I specialize in backend development using Erlang and continuously expand my expertise in Python, Artificial Intelligence, Cloud Technologies, and Software Engineering. I am currently pursuing an Online MCA and actively learning Google Gemini Enterprise and Generative AI.
             </p>
 
             <div className="flex flex-wrap gap-2 pt-2">
