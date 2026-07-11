@@ -1,27 +1,57 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Trophy, Medal, Star, Sparkles as SparkleIcon, Award, GraduationCap, Bot, BadgeCheck } from 'lucide-react';
+import { Trophy, Medal, Star, Sparkles as SparkleIcon, Award, BadgeCheck } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 export function Highlights() {
   const highlights = [
-    { icon: '🏆', label: 'A Band Performer (FY2025)' },
-    { icon: '🏆', label: 'A Band Performer (FY2026)' },
-    { icon: '🥇', label: 'Best Performer Award' },
-    { icon: '⭐', label: 'Star of the Month Award' },
+    { icon: '🏆', label: 'A Band Performer · FY2025' },
+    { icon: '🏆', label: 'A Band Performer · FY2026' },
+    { icon: '🥇', label: 'Best Performer' },
+    { icon: '⭐', label: 'Star of the Month' },
     { icon: '🌟', label: 'On-the-Spot Team Award' },
-    { icon: '🏅', label: 'Multiple TCS Recognition Badges' },
+    { icon: '🏅', label: 'Recognition Badges' },
     { icon: '🎓', label: 'Pursuing Online MCA' },
-    { icon: '🤖', label: 'Learning Google Gemini Enterprise' }
+    { icon: '🤖', label: 'Learning Gemini Enterprise' }
   ];
 
   const achievements = [
-    { icon: <Trophy className="h-6 w-6" />, title: 'A Band Performer', desc: 'FY2025', color: 'text-yellow-400 bg-yellow-500/10' },
-    { icon: <Trophy className="h-6 w-6" />, title: 'A Band Performer', desc: 'FY2026', color: 'text-yellow-400 bg-yellow-500/10' },
-    { icon: <Medal className="h-6 w-6" />, title: 'Best Performer Award', desc: 'TCS — Ericsson R&D', color: 'text-blue-400 bg-blue-500/10' },
-    { icon: <Star className="h-6 w-6" />, title: 'Star of the Month Award', desc: 'TCS — Ericsson R&D', color: 'text-purple-400 bg-purple-500/10' },
-    { icon: <SparkleIcon className="h-6 w-6" />, title: 'On-the-Spot Team Award', desc: 'TCS — Ericsson R&D', color: 'text-pink-400 bg-pink-500/10' },
-    { icon: <BadgeCheck className="h-6 w-6" />, title: 'Recognition Badges', desc: 'Multiple TCS badges', color: 'text-green-400 bg-green-500/10' }
+    {
+      icon: <Trophy className="h-6 w-6" />,
+      title: 'A Band Performer — FY2025',
+      desc: 'Recognized as an A Band performer for consistent, high-impact contributions during FY2024-25.',
+      color: 'text-yellow-400 bg-yellow-500/10'
+    },
+    {
+      icon: <Trophy className="h-6 w-6" />,
+      title: 'A Band Performer — FY2026',
+      desc: 'Earned A Band performer status again in FY2025-26, reflecting sustained excellence.',
+      color: 'text-yellow-400 bg-yellow-500/10'
+    },
+    {
+      icon: <Medal className="h-6 w-6" />,
+      title: 'Best Performer Award',
+      desc: 'Awarded for outstanding contribution and reliability on the Ericsson R&D engagement.',
+      color: 'text-blue-400 bg-blue-500/10'
+    },
+    {
+      icon: <Star className="h-6 w-6" />,
+      title: 'Star of the Month Award',
+      desc: 'Recognized as Star of the Month for exceptional performance and dedication.',
+      color: 'text-purple-400 bg-purple-500/10'
+    },
+    {
+      icon: <SparkleIcon className="h-6 w-6" />,
+      title: 'On-the-Spot Team Award',
+      desc: 'Received an on-the-spot award for collaborative problem-solving under pressure.',
+      color: 'text-pink-400 bg-pink-500/10'
+    },
+    {
+      icon: <BadgeCheck className="h-6 w-6" />,
+      title: 'Recognition Badges',
+      desc: 'Collected multiple official TCS recognition badges across projects and initiatives.',
+      color: 'text-green-400 bg-green-500/10'
+    }
   ];
 
   return (
@@ -48,8 +78,8 @@ export function Highlights() {
           </motion.h2>
         </div>
 
-        {/* Highlights badge cloud */}
-        <div className="flex flex-wrap justify-center gap-3 mb-20">
+        {/* Compact highlights badge cloud */}
+        <div className="flex flex-wrap justify-center gap-2.5 mb-20">
           {highlights.map((item, idx) => (
             <motion.div
               key={item.label}
@@ -57,32 +87,31 @@ export function Highlights() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.06 }}
-              whileHover={{ y: -4, scale: 1.03 }}
-              className="flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-white/10 text-sm font-medium hover:border-primary/30 transition-colors"
+              whileHover={{ y: -3, scale: 1.03 }}
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-card border border-white/10 text-xs sm:text-sm font-medium hover:border-primary/30 transition-colors"
             >
-              <span className="text-base leading-none">{item.icon}</span>
+              <span className="text-sm leading-none">{item.icon}</span>
               <span>{item.label}</span>
             </motion.div>
           ))}
         </div>
 
-        {/* Achievements cards */}
+        {/* Detailed achievement cards */}
         <div className="flex flex-col items-center mb-10 text-center">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-bold flex items-center gap-2"
+            className="text-2xl md:text-3xl font-bold"
           >
-            <GraduationCap className="hidden" />
-            <span>Key <span className="text-gradient">Achievements</span></span>
+            Key <span className="text-gradient">Achievements</span>
           </motion.h3>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {achievements.map((item, idx) => (
             <motion.div
-              key={`${item.title}-${item.desc}`}
+              key={item.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -96,7 +125,7 @@ export function Highlights() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">{item.title}</h4>
-                    <p className="text-sm text-muted-foreground mt-0.5">{item.desc}</p>
+                    <p className="text-sm text-muted-foreground mt-1 leading-relaxed">{item.desc}</p>
                   </div>
                 </CardContent>
               </Card>
